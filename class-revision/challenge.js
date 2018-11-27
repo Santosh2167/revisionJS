@@ -1,40 +1,21 @@
 //get every nth element in an given array 
-let arrayGet= [1,2,3,4,5,6];
+// let arrayGet= [1,2,3,4,5,6];
 
 
 
-function getArray(arrayGet,n){
-    let tempArray=[];
+// function getArray(arrayGet,n){
+//     let tempArray=[];
 
-    // if (n===2){
+//         for(let i=n-1;i<arrayGet.length;i+=n){
+//             tempArray.push(arrayGet[i]);
+//         }
+       
+//         return tempArray;
+    
 
-        for(let i=n-1;i<arrayGet.length;i+=n){
-            tempArray.push(arrayGet[i]);
-        }
-        // console.log(tempArray);
-        return tempArray;
-    // }
-    // tempArray= arrayGet.filter(item => (arrayGet.indexOf(item)%(n-1) ===0));
+// } 
 
-    console.log(tempArray);
-
-    // for(let i=0;i<arrayGet.length;i++) {
-
-    //     console.log(`${i} divide by ${n}:`+ i%(n-1));
-
-    //     if (i%(n-1)===0){
-            
-    //         tempArray.push(arrayGet[i]);
-
-    //     }
-    // }
-
-    // console.log(tempArray);
-
-} 
-// console.log(arrayGet);
-
-console.log(getArray(arrayGet,2));
+// console.log(getArray(arrayGet,2));
 
 
 // ES6 fat arrow
@@ -45,19 +26,51 @@ console.log(getArray(arrayGet,2));
 
 // } 
 
-function checkNum (x,y) {
+// function checkNum (x,y) {
     
-        if((typeof x !=="number") || (typeof y !== "number")) throw "not a number";
-        if(y===0) throw "divisoin by 0";
+//         if((typeof x !=="number") || (typeof y !== "number")) throw "not a number";
+//         if(y===0) throw "divisoin by 0";
 
-        return x/y;
+//         return x/y;
 
    
-}
+// }
 
-try {
-    checkNum(6,"3")
+// try {
+//     checkNum(6,"3")
 
-}catch (error) {
-    console.log(error);
-}
+// }catch (error) {
+//     console.log(error);
+// }
+
+//Write a function that separates a string of comma separated values into an array without using .split()
+//
+
+//Create a Runner class that has the properties, name, distance and place
+//Create a method that adds distance to an instance of runner and modifies their place and the other runners places
+//Create a method on the Runner class that shows the names of the runners in order from first place to last
+
+//solution to the first 
+let myString = "garret,tom";
+let tempString ="";
+let stringArray=[];
+
+for(let i=0;i<=myString.length;i++){
+    
+    
+    if(myString[i]=== "," || i ===myString.length){
+        stringArray.push(tempString);
+        tempString="";
+        
+        
+        // console.log(tempString);
+    } else if(myString[i]!==",") {
+
+
+        tempString +=myString[i];
+    }
+
+
+};
+
+console.log(stringArray);

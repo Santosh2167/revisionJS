@@ -4,13 +4,17 @@ myLink.addEventListener("click", getDataFromAPI);
 
 function getDataFromAPI() {
 
+
         let getData = new XMLHttpRequest();
+        let apiData;
 
         getData.open("GET","https://randomuser.me/api",true);
 
         getData.onload= ()=>{
             if(getData.status >= 200 && getData.status <=400){
-                console.log(getData.responseText);
+                    apiData = (getData.responseText);
+                    // console.log(apiData);
+                    displayData(apiData);
             } else {
                 console.log("error")
                 console.log(getData)
@@ -24,4 +28,9 @@ function getDataFromAPI() {
         }
 
         getData.send();
+        
+    }
+
+    function displayData(apiData) {
+        console.log("at Display: " +apiData);
     }
