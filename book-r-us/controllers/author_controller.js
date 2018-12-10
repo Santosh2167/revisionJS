@@ -1,7 +1,10 @@
-const express = require("express");
+const AuthorModel = require("./../database/models/author_model");
 
-function create(req,res){
+async function create(req,res){
+    let(name,bio,gender) = req.body;
+    let author = await AuthorModel.create({name, bio, gender});
 
+    res.redirect(`/authors/${author._id}`);
 }
 
 function index(req,res){
@@ -20,7 +23,11 @@ function destory(req,res){
 
 }
 
-function show(req,res) {
+async function show(req,res) {
+    let {id} = req.params;
+    let author = await AuthorModel.findById(id);
+
+    res.render("author/show",{author});
 
 }
 

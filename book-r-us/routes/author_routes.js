@@ -8,7 +8,7 @@ router.get("/new",AuthorController.make);//Create
 router.get("/:id",AuthorController.show);//read
 router.put("/:id",AuthorController.update);//update
 router.patch("/:id",AuthorController.update);//update
-router.delete("/:id",AuthorController.destroy);//delete
+//router.delete("/:id",AuthorController.destroy);//delete
 router.get("/:id/edit",AuthorController.edit);//update
 
 
