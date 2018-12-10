@@ -1,8 +1,12 @@
 const AuthorModel = require("./../database/models/author_model");
 
 async function create(req,res){
-    let(name,bio,gender) = req.body;
-    let author = await AuthorModel.create({name, bio, gender});
+    // res.json(req.body);
+    let {name,bio,gender} = req.body;
+    let author = await AuthorModel.create({name, bio, gender})
+        .catch(err => res.status(500).send(err));
+
+        
 
     res.redirect(`/authors/${author._id}`);
 }
@@ -24,9 +28,10 @@ function destory(req,res){
 }
 
 async function show(req,res) {
-    let {id} = req.params;
+    // console.log("here");
+    let { id } = req.params;
     let author = await AuthorModel.findById(id);
-
+    res.json(author);
     res.render("author/show",{author});
 
 }
