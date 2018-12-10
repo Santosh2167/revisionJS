@@ -110,4 +110,62 @@ heading.textContent = "Hooked"
 
 //   If a thisArg parameter is provided to filter, it will be used as the callback's this value. 
 //    Otherwise, the value undefined will be used as its this value. 
+
+//*************************************************New Method => Array.some()
+
+// The some() method tests whether at least one element in the array passes the test 
+// implemented by the provided function.
    
+// parameters:
+// callback: test items by taking three elements
+//   element: the current element being processed in the Array
+//   index: index of current element being processed
+//   array: the array some() was called upon
+//   thisArg: Vaue to use as this when executing the callback function 
+
+// return value: true if callback function returns truthy value of any array otherwise, false
+
+//********************************************** New Method => find()
+// The find() method returns the value of the first element in the array 
+// that satisfies the provided testing function. Otherwise undefined is 
+// returned.
+
+// It is different from filter as filter returns an array that satisfies the 
+// condition given in the function. Whereas find returns just a element.
+
+// parameters
+
+// callback function:
+//  element: The current element being processed
+//  index: Index of the current element being processed 
+// array: The array find was called upon
+// thisArg: Object to use a this when executing callback
+
+// Returns:
+// Value of the first element that satisfies the provided function 
+// otherwise, undefined is returned  
+
+// const inventory = [
+//   {name: 'apples', quantity: 2},
+//   {name: 'bananas', quantity: 0},
+//   {name: 'cherries', quantity: 5},
+//   {name: 'cherries', quantity: 6}
+// ];
+
+// const result = inventory.find( fruit => fruit.name === 'cherries' );
+
+// console.log(result) // { name: 'cherries', quantity: 5 }
+
+// var inventory = [
+//   {name: 'apples', quantity: 2},
+//   {name: 'bananas', quantity: 0},
+//   {name: 'cherries', quantity: 5}
+// ];
+
+// function isCherries(fruit) { 
+//   return fruit.name === 'cherries';
+// }
+
+// console.log(inventory.find(isCherries));
+
+//******************************************** New Method 
