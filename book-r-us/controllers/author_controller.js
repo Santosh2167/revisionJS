@@ -9,6 +9,7 @@ function index(req,res){
 }
 
 function make(req,res) {
+    res.render("author/new");
 
 }
 
