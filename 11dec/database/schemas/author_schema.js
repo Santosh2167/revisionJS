@@ -18,4 +18,4 @@ const AuthorSchema = new Schema({
 
 });
 
-export-modules = AuthorSchema;
+module.exports = AuthorSchema;

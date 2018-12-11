@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const port = 3000;
 const app = express();
 
+
 mongoose.connect("mongodb://localhost/book_r_us3");
 mongoose.Promise = global.Promise;
 mongoose.connection.on("error",err => console.log(err));
@@ -15,6 +16,8 @@ app.set("view engine","handlebars");
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+
+app.use(require("./routes"));
 
 
 
