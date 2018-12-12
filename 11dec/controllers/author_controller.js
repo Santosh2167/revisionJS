@@ -24,7 +24,14 @@ function make(req,res){
 
 }
 
-function edit(req,res){
+async function edit(req,res){
+    let {id} = req.params;
+    let author = await AuthorModel.findById(id);
+
+    //res.json(author);
+
+    res.render("author/edit",{author});
+    
 
 }
 
@@ -32,7 +39,9 @@ function update(req,res){
 
 }
 
-function index(req,res){
+async function index(req,res){
+    let author = await AuthorModel.find();
+    res.render("author/index",{author});
 
 }
 async function show(req,res){
@@ -45,7 +54,10 @@ async function show(req,res){
     res.render("author/show",{author});
 
 }
-function destory(req,res){
+async function destroy(req,res){
+    let {id} = req.params;
+    await AuthorModel.findByIdAndRemove(id);
+    res.redirect("/author"); 
 
 }
 
@@ -56,5 +68,5 @@ module.exports = {
     update,
     index,
     show,
-    destory
+    destroy
 }

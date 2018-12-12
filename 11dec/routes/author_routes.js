@@ -9,6 +9,7 @@ router.get("/:id",AuthorController.show);
 router.get("/:id/edit",AuthorController.edit);
 router.put("/:id",AuthorController.update);
 router.patch("/:id",AuthorController.update);
+router.delete("/:id",AuthorController.destroy);
 
 
 module.exports = router;
